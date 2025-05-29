@@ -1,0 +1,128 @@
+header {
+    width: calc(100% - 80px);
+    background-color: rgb(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px;
+    z-index: 100;
+}
+
+.header-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-logo h3 {
+    font-size: 20px;
+}
+
+.header-logo img {
+    width: 48px;
+    border-radius: 100px;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 14px;
+    color: white;
+    gap: 8px;
+}
+
+.header-phone {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-right: 10px;
+}
+
+.header-contacts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px
+}
+
+.navigation-container {
+    display: flex;
+    gap: 8px;
+    color: white;
+}
+
+.header-button {
+    background-color: #313131;
+    color: #ffffff;
+    font-size: 13px;
+    height: 32px;
+    width: 32px;
+}
+
+.header-button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-button:hover {
+    background-color: #4d4d4d;
+    transform: scale(1.09);
+}
+
+.header-button__consultation {
+    padding: 0 16px 2px;
+    background-color: #5552e8;
+    width: auto;
+}
+
+.header-button__consultation a {
+    height: 100%;
+    width: 100%;
+}
+
+.header-button__consultation:hover {
+    background-color: #3e58b8;
+    transform: scale(1.03);
+}
+
+@media (max-width: 830px) {
+    header {
+        width: calc(100% - 40px);
+        padding: 10px 20px;
+    }
+
+    .header-logo h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 724px) {
+    .header-button__networks {
+        display: none;
+    }
+
+    .header-phone {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 630px) {
+    .header-button__consultation {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .header-logo h3 {
+        display: none;
+    }
+}

@@ -1,0 +1,34 @@
+<footer>
+  <div class="form-container">
+    <h2>Получите бесплатную консультацию!</h2>
+    <p>Заполните простую форму, опишите свою проблему и выберите удобный формат для консультации.</p>
+    <form class="consultation-form" id="consultation-form" action="/submit-form" method="POST">
+      <input type="text" name="name" placeholder="Ваше имя" required />
+      <input type="text" name="phone" placeholder="Номер телефона" required />
+      <input type="email" name="email" placeholder="Электронная почта" required />
+      <textarea name="problem" placeholder="Описание вашей проблемы" required></textarea>
+      <select name="consultationType" required>
+        <option value="" disabled selected>Форма консультации</option>
+        <option value="online">Онлайн</option>
+        <option value="offline">Очная</option>
+      </select>
+      <button class="big-button" type="submit">Получить консультацию</button>
+    </form>
+  </div>
+  <div class="footer-container">
+    <div class="contacts">
+        <a href="https://t.me/KhlystovNN">
+          <img src="/icons/footer/telegram.png" alt="telegram" width="40px">
+        </a>
+        <a href="https://wa.me/+79524616931">
+          <img src="/icons/footer/whatsapp.png" alt="whatsapp" width="40px">
+        </a>
+      <a href="https://t.me/KhlystovNN">
+        <img src="/icons/footer/vk.png" alt="vk" width="40px">
+      </a>
+    </div>
+    <p>
+      Мы ценим ваше время и стремимся предоставить качественные бесплатные юридические консультации. Не упустите возможность получить профессиональную юридическую помощь в Нижнем Новгороде!
+    </p>
+  </div>
+</footer>

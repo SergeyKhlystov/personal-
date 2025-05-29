@@ -1,0 +1,178 @@
+@import url("header.css");
+@import url('main.css');
+@import url('item.css');
+@import url('footer.css');
+
+html {
+  scroll-behavior: smooth; /* Плавный скролл */
+}
+
+* {
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-color: white;
+  margin: 0;
+  overflow-y: auto;
+}
+
+a {
+  text-decoration: none; /* Убирает подчеркивание */
+  color: inherit; /* Наследует цвет текста от родителя */
+  font-weight: normal; /* Убирает жирность */
+  background: none; /* Убирает фон */
+  border: none; /* Убирает рамку */
+  outline: none; /* Убирает обводку при фокусе */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;  /* Убираем стандартные размеры шрифтов */
+  font-weight: normal; /* Убираем жирное начертание */
+  margin: 0;         /* Убираем отступы */
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.container-image {
+  position: relative;
+  width: calc(100% - 40px);
+  min-height: calc(450px - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-button {
+  width: 100%;
+  max-width: 340px;
+  height: 60px;
+  background-color: #5552e8;
+  border: #5e5ce700 solid 3px;
+  margin-top: 40px;
+  transition: transform 0.3s ease;
+  color: white;
+  font-size: 24px;
+  border-radius: 20px;
+}
+
+.big-button:hover {
+  background-color: #3e58b8;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: calc(100% - 40px);
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 620px) {
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .big-button {
+    max-width: 300px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 465px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .big-button {
+    max-width: 250px;
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 375px) {
+  h2 {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 14px;
+  }
+
+  .big-button {
+    max-width: 200px;
+    height: 40px;
+    font-size: 14px;
+  }
+}

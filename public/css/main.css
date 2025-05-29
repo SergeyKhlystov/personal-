@@ -1,0 +1,277 @@
+.main-container {
+    width: 100%;
+    font-size: 20px;
+}
+
+.banner {
+    background-image: url('/images/TopSection.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100dvh;
+    overflow: hidden;
+    color: #ebebeb;
+}
+
+.banner-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgb(0, 0, 0, 0.4);
+}
+
+.banner-title {
+    font-size: 40px;
+    font-weight: bold;
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.banner-description {
+    line-height: 30px;
+    width: 90%;
+    max-width: 960px;
+    text-align: center;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+.banner-arrow {
+    position: absolute;
+    bottom: 30px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    transform: translatey(0px);
+    animation: float 3s ease-in-out infinite;
+    cursor: pointer;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-25px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+.services-container {
+    width: calc(100% - 20px);
+    display: flex;
+    padding: 10px;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.service-info {
+    flex: 1 1 calc(25% - 10px - 6px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 170px;
+    height: 170px;
+    background-color: #f6f6f6;
+    border: solid 3px #e3e3e3;
+    transition: 0.5s;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0);
+    gap: 5px;
+}
+
+.service-info:hover {
+    background-color: #eff0f3;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.619);
+}
+
+.service-info h2 {
+    text-align: center;
+    color: #6b5f5f;
+    font-size: 22px;
+    font-weight: normal;
+    padding: 0 3px;
+}
+
+.how-works {
+    flex-direction: row;
+    color: #ebebeb;
+    background-image: url('/images/WorkPlan.webp');
+}
+
+.how-works-container {
+    gap: 15px;
+}
+
+.how-works-container h2 {
+    color: #ececec;
+}
+
+.steps {
+    display: flex;
+    gap: 15px;
+}
+
+.steps-lists {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #d9d9d9;
+    max-width: 790px;
+}
+
+.steps-lists h3 {
+    color: #dddddd;
+}
+
+.steps-lists p {
+    padding-top: 5px;
+    line-height: 1.5;
+}
+
+.reasons {
+    gap: 20px;
+    color: #6b5f5f;
+    background-image: url('/images/Advantages.webp');
+}
+
+.reasons h2 {
+    color: #574f4f;
+}
+
+.reasons-lists {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 820px;
+}
+
+.reasons-lists__container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.reasons-lists__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-us {
+    gap: 20px;
+    color: #e8e8e8;
+    background-image: url('/images/About.webp');
+}
+
+.about-us__container {
+    padding: 0 40px;
+    max-width: 1000px;
+}
+
+.about-us__container p {
+    display: block;
+    line-height: 35px;
+    padding: 10px 20px 10px 30px;
+    border-left: 3px solid #e8e8e8;;
+}
+
+    /* Затемнение фона */
+.how-works::before, .about-us::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.733), rgba(0, 0, 0, 0.526), rgba(0, 0, 0, 0.741));
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    .banner-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 620px) {
+    .main-container, .banner-description {
+        font-size: 16px;
+    }
+
+    .banner-title {
+        font-size: 24px;
+    }
+
+    .service-info {
+        gap: 10px;
+    }
+
+    .service-info h2 {
+        font-size: 16px;
+    }
+
+    .steps img {
+        display: none;
+    }
+
+    .reasons-lists {
+        padding: 0 20px;
+    }
+
+    .reasons-lists__container img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .about-us__container {
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    .about-us__container p {
+        padding: 10px 20px;
+        line-height: 26px;
+    }
+}
+
+@media (max-width: 465px) {
+    .main-container, .banner-description {
+        font-size: 14px;
+    }
+
+    .banner-title {
+        font-size: 20px;
+    }
+
+    .reasons-lists {
+        padding: 0 10px;
+    }
+
+
+    .reasons-lists__container img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 375px) {
+    .banner-title {
+        font-size: 16px;
+    }
+
+    .reasons-lists__container img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .about-us__container p {
+        border-left: 0;
+        padding: 10px;
+    }
+}
