@@ -5,13 +5,19 @@
     <form class="consultation-form" id="consultation-form" action="/submit-form" method="POST">
       <input type="text" name="name" placeholder="Ваше имя" required />
       <input type="text" name="phone" placeholder="Номер телефона" required />
-      <input type="email" name="email" placeholder="Электронная почта" required />
+<!--      <input type="email" name="email" placeholder="Электронная почта" required />-->
       <textarea name="problem" placeholder="Описание вашей проблемы" required></textarea>
       <select name="consultationType" required>
         <option value="" disabled selected>Форма консультации</option>
         <option value="online">Онлайн</option>
         <option value="offline">Очная</option>
       </select>
+      <div class="consultation-agreement">
+        <input type="checkbox" id="consent" name="consent" required style="margin-right: 8px;">
+        <label for="consent">
+          Я согласен(а) на <a class="consultation-link" href="../privacy-policy.pdf" target="_blank">обработку персональных данных</a>
+        </label>
+      </div>
       <button class="big-button" type="submit">Получить консультацию</button>
     </form>
   </div>

@@ -28,6 +28,27 @@
     padding-top: 10px;
 }
 
+.consultation-agreement {
+    display: flex;
+    align-items: center;
+}
+
+.consultation-form input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.consultation-link {
+    cursor: pointer;
+    border-bottom: 1px solid #3e58b8;
+    color: #5552e8;
+}
+
+.consultation-link:hover {
+    color: #3e58b8;
+}
+
 .consultation-form input {
     height: calc(45px - 10px - 2px);
     width: 100%;

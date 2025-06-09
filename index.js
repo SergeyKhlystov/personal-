@@ -14,6 +14,7 @@ const PORT = 3000;
 // Настройка middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('static'));
 
 // Функция для чтения всех данных из папки `data`
 function loadAllItems() {
@@ -129,6 +130,8 @@ app.post('/submit-form', async (req, res) => {
   - Проблема: ${problem}
   - Формат консультации: ${consultationType}
   `;
+
+  console.log(message, TELEGRAM_CHANNEL_ID, TELEGRAM_BOT_TOKEN);
 
   try {
     // Отправляем сообщение в Telegram
