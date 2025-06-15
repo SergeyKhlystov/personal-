@@ -126,7 +126,6 @@ app.post('/submit-form', async (req, res) => {
   📝 Новая заявка на консультацию:
   - Имя: ${name}
   - Телефон: ${phone}
-  - Email: ${email}
   - Проблема: ${problem}
   - Формат консультации: ${consultationType}
   `;

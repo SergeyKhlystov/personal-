@@ -49,10 +49,14 @@
     color: #3e58b8;
 }
 
+.field-container {
+    width: 100%;
+    max-width: calc(500px - 20px);
+}
+
 .consultation-form input {
     height: calc(45px - 10px - 2px);
     width: 100%;
-    max-width: calc(500px - 20px - 2px);
     background-color: #ffffff63;
     border: 1px solid rgba(0, 0, 0, 0.751);
     border-radius: 5px;
@@ -62,10 +66,14 @@
     transition: 0.7s;
 }
 
+.textarea-container {
+    width: 100%;
+    max-width: calc(500px - 20px);
+}
+
 .consultation-form textarea {
     height: calc(90px - 13px - 2px);
     width: 100%;
-    max-width: calc(500px - 20px - 2px);
     background-color: #ffffff63;
     border: 1px solid rgba(0, 0, 0, 0.751);
     border-radius: 5px;
@@ -73,12 +81,18 @@
     color: rgb(25, 25, 25);
     font-size: 20px;
     transition: 0.7s;
+    margin-bottom: -7px;
+}
+
+.select-container {
+    max-width: 503px;
+    width: 100%;
+    margin-left: 22px;
 }
 
 .consultation-form select {
     height: 45px;
     width: 100%;
-    max-width: 500px;
     background-color: #ffffff63;
     border: 1px solid rgba(0, 0, 0, 0.751);
     border-radius: 5px;
@@ -128,6 +142,10 @@
 @media (max-width: 768px) {
     .form-container {
         font-size: 20px;
+    }
+
+    .select-container {
+        margin-left: 0px;
     }
 
     .consultation-form input {

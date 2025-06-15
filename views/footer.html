@@ -3,15 +3,26 @@
     <h2>Получите бесплатную консультацию!</h2>
     <p>Заполните простую форму, опишите свою проблему и выберите удобный формат для консультации.</p>
     <form class="consultation-form" id="consultation-form" action="/submit-form" method="POST">
-      <input type="text" name="name" placeholder="Ваше имя" required />
-      <input type="text" name="phone" placeholder="Номер телефона" required />
-<!--      <input type="email" name="email" placeholder="Электронная почта" required />-->
-      <textarea name="problem" placeholder="Описание вашей проблемы" required></textarea>
-      <select name="consultationType" required>
-        <option value="" disabled selected>Форма консультации</option>
-        <option value="online">Онлайн</option>
-        <option value="offline">В офисе</option>
-      </select>
+      <div class="field-container">
+        <input type="text" name="name" placeholder="Ваше имя" required />
+      </div>
+
+      <div class="field-container">
+        <input type="text" name="phone" placeholder="Номер телефона" required />
+      </div>
+
+      <div class="textarea-container">
+        <textarea name="problem" placeholder="Описание вашей проблемы" required></textarea>
+      </div>
+
+      <div class="select-container">
+        <select name="consultationType" required>
+          <option value="" disabled selected>Форма консультации</option>
+          <option value="online">Онлайн</option>
+          <option value="offline">В офисе</option>
+        </select>
+      </div>
+
       <div class="consultation-agreement">
         <input type="checkbox" id="consent" name="consent" required style="margin-right: 8px;">
         <label for="consent">
@@ -38,3 +49,49 @@
     </p>
   </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/just-validate@4.2.0/dist/just-validate.production.min.js"></script>
+
+<script>
+  const form = document.querySelector('#consultation-form');
+  const consent = form.querySelector('[name="consent"]');
+
+  const validation = new JustValidate('#consultation-form', {
+    validateBeforeSubmitting: true,
+    errorFieldCssClass: 'is-invalid',
+    errorLabelStyle: {
+      color: 'red',
+      fontSize: '0.9em',
+      marginTop: '4px',
+      marginLeft: '8px',
+    },
+    focusInvalidField: true
+  });
+
+  validation
+          .addField('[name="name"]', [
+            { rule: 'required', errorMessage: 'Введите имя' }
+          ]
+          )
+          .addField('[name="phone"]', [
+            { rule: 'required', errorMessage: 'Введите номер телефона' },
+            { rule: 'customRegexp', value: /^\+?[0-9\s\-()]{7,20}$/, errorMessage: 'Неверный формат телефона' }
+          ])
+          .addField('[name="problem"]', [
+            { rule: 'required', errorMessage: 'Опишите проблему' }
+          ])
+          .addField('[name="consultationType"]', [
+            { rule: 'required', errorMessage: 'Выберите тип консультации' }
+          ])
+          .onSuccess((event) => {
+            // Дополнительно проверим email встроенной HTML5-валидацией
+            if (!consent.checkValidity()) {
+              return;
+            }
+
+            // Если все валидно — можно отправлять форму
+            form.submit();
+          });
+  ;
+</script>
+
