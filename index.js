@@ -130,8 +130,6 @@ app.post('/submit-form', async (req, res) => {
   - Формат консультации: ${consultationType}
   `;
 
-  console.log(message, TELEGRAM_CHANNEL_ID, TELEGRAM_BOT_TOKEN);
-
   try {
     // Отправляем сообщение в Telegram
     await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
@@ -139,12 +137,19 @@ app.post('/submit-form', async (req, res) => {
       text: message,
     });
 
-    res.send('<h1>Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.</h1>');
+    res.send(onSuccess());
   } catch (error) {
     console.error('Ошибка отправки в Telegram:', error);
     res.status(500).send('<h1>Ошибка отправки данных. Пожалуйста, попробуйте позже.</h1>');
   }
 });
+
+function onSuccess() {
+  let result = fs.readFileSync(path.join(__dirname, 'views/success.html'), 'utf-8');
+  let head = fs.readFileSync(path.join(__dirname, 'views/header.html'), 'utf-8');
+  result = result.replace(`{{header}}`, head);
+  return result;
+}
 
 
 // Запуск сервера
